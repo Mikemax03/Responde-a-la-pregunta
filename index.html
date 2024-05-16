@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi novia?</title>
+    <style>
+        body {
+            text-align: center;
+            padding-top: 50px;
+            font-family: Arial, sans-serif;
+        }
+        #yesBtn, #noBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #yesBtn {
+            background-color: green;
+        }
+        #noBtn {
+            background-color: red;
+        }
+        #celebrationImage {
+            max-width: 100%;
+            height: auto;
+            display: none; /* Ocultar la imagen inicialmente */
+        }
+    </style>
+</head>
+<body>
+    <h2>¿Quieres ser mi novia?</h2>
+    <button id="yesBtn">Sí</button>
+    <button id="noBtn">No</button>
+    <img id="celebrationImage" src="path_to_your_image.png" alt="Felicidades">
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const img = document.getElementById('celebrationImage');
+        let yesSize = 1;
+        let noSize = 1;
+
+        noBtn.onclick = function() {
+            yesSize += 0.1;
+            noSize -= 0.1;
+            yesBtn.style.transform = `scale(${yesSize})`;
+            noBtn.style.transform = `scale(${noSize})`;
+        };
+
+        yesBtn.onclick = function() {
+            img.style.display = 'block'; // Mostrar la imagen cuando se hace clic en "Sí"
+        };
+    </script>
+</body>
+</html>
